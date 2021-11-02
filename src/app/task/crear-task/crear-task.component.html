@@ -1,0 +1,19 @@
+<h1> Create Task</h1>
+
+<form (submit)="SaveTask()" [formGroup]="form" class="form-task">
+    <mat-form-field class="input-full-width">
+        <mat-label>Tarea</mat-label>
+        <input formControlName="name" matInput />
+        <mat-error *ngIf="form.invalid">{{getErrorCampoNombre()}}</mat-error>
+    </mat-form-field>
+
+    <mat-form-field class="input-full-width">
+        <mat-label>URL Imagen</mat-label>
+        <input formControlName="img" matInput>
+        <mat-error>{{getErrorCampoImg()}}</mat-error>
+    </mat-form-field>
+
+    <button mat-flat-button color="primary" [disabled]="form.invalid">
+        Guardar 
+    </button>
+</form>
