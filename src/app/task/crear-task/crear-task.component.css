@@ -7,3 +7,11 @@
 .input-full-width {
     width: 100%;
 }
+
+.listadoBotones {
+    text-align: right;
+}
+
+.button-flat {
+    margin-right: 10px;
+}

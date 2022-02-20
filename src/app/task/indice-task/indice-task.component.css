@@ -1,3 +1,17 @@
+/* body {
+    background-color: rgba(219, 225, 202, 1);
+} */
+
+mat-form-field {
+    width: 100%;
+}
+
+.add_button {
+    position: fixed;
+    top: 80px;
+    right: 20px;
+}
+
 .img-task {
     width: 100px;
     height: 100px;

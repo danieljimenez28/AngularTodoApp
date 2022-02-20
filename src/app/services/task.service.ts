@@ -20,6 +20,7 @@ export class TaskService {
     // console.log(taskList);
     return taskList;
   }
+  
 
   async setTask(task:any) {
     

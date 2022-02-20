@@ -24,7 +24,10 @@ export class CrearTaskComponent implements OnInit {
       name: ['', {
         validators:[Validators.required, Validators.minLength(5)]
       }],
-      img: ['', Validators.required]
+      autor: ['', Validators.required],
+      img: ['', {
+        validators:[Validators.required, Validators.minLength(20)]
+      }]
     });
   }
 
@@ -36,7 +39,7 @@ export class CrearTaskComponent implements OnInit {
     // this.route.navigate(['/tasks']);
     
     let task = {
-      autor: 'ElDany',
+      autor: this.form.value.autor,
       name: this.form.value.name,
       img: this.form.value.img,
     }
@@ -68,6 +71,18 @@ export class CrearTaskComponent implements OnInit {
     return '';
   }
 
+  getErrorCampoAutor(){
+
+    let campo = this.form.get('autor');
+
+    if(campo.hasError('required'))
+    {
+      return 'El Autor de la tarea es requerido';
+    }
+    
+    return '';
+  }
+
   getErrorCampoImg(){
 
     let campo = this.form.get('img');
@@ -75,6 +90,10 @@ export class CrearTaskComponent implements OnInit {
     if(campo.hasError('required'))
     {
       return 'La url de la imagen de la tarea es requerida';
+    } 
+    if(campo.hasError('minlength'))
+    {
+      return '20 caracteres como minimo';
     }
     
     return '';

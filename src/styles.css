@@ -6,8 +6,11 @@ body {
 }
 
 body {
+    position: relative;
+    min-height: 100vh;
     margin: 0;
     font-family: Roboto, "Helvetica Neue", sans-serif;
+    /* border: solid 3px red; */
 }
 
 .container {

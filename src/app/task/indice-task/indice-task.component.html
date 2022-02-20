@@ -1,33 +1,21 @@
-<!-- <table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
+<h1>
+    <span matBadge="{{taskCount}}" matBadgeOverlap="false">Task List</span>
+</h1>
 
-    <ng-container matColumnDef="position">
-        <th mat-header-cell *matHeaderCellDef> No. </th>
-        <td mat-cell *matCellDef="let element"> {{element.position}} </td>
-    </ng-container>
+<a class="add_button" mat-mini-fab aria-label="Crear nueva tarea" routerLink="/tasks/crear">
+    <mat-icon>add</mat-icon>
+</a>
 
-    <ng-container matColumnDef="name">
-        <th mat-header-cell *matHeaderCellDef> Name </th>
-        <td mat-cell *matCellDef="let element"> {{element.name}} </td>
-    </ng-container>
+<form [formGroup]="form">
+    <mat-form-field appearance="outline">
+        <mat-label>Search Task</mat-label>
+        <input formControlName="name" matInput (change)="buscarTarea()" />
+    </mat-form-field>
+</form>
 
-    <ng-container matColumnDef="weight">
-        <th mat-header-cell *matHeaderCellDef> Weight </th>
-        <td mat-cell *matCellDef="let element"> {{element.weight}} </td>
-    </ng-container>
-
-    <ng-container matColumnDef="symbol">
-        <th mat-header-cell *matHeaderCellDef> Symbol </th>
-        <td mat-cell *matCellDef="let element"> {{element.symbol}} </td>
-    </ng-container>
-
-    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
-    <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
-</table> -->
-
-<!-- *************************************** -->
-<!-- *************************************** -->
-
-<h1> Task List</h1>
+<!-- <div *ngIf="!dataSource">
+    <p>No hay datos para mostrar...</p>
+</div> -->
 
 <table mat-table [dataSource]="dataSource" class="mat-elevation-z8 demo-table">
 
